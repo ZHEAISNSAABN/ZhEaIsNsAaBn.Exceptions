@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhEaIsNsAaBn.Exceptions", "ZhEaIsNsAaBn.Exceptions\ZhEaIsNsAaBn.Exceptions.csproj", "{E868F885-FA2A-4F7B-945D-7374A1EBD5AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhEaIsNsAaBn.Exceptions.Base", "ZhEaIsNsAaBn.Exceptions.Base\ZhEaIsNsAaBn.Exceptions.Base.csproj", "{109EE965-A7F7-4D8E-B379-6B0FD7FF1798}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E868F885-FA2A-4F7B-945D-7374A1EBD5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E868F885-FA2A-4F7B-945D-7374A1EBD5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E868F885-FA2A-4F7B-945D-7374A1EBD5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E868F885-FA2A-4F7B-945D-7374A1EBD5AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{109EE965-A7F7-4D8E-B379-6B0FD7FF1798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{109EE965-A7F7-4D8E-B379-6B0FD7FF1798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{109EE965-A7F7-4D8E-B379-6B0FD7FF1798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{109EE965-A7F7-4D8E-B379-6B0FD7FF1798}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25E8BB9B-3C6C-4770-8175-18ABDE6AFE15}
+	EndGlobalSection
+EndGlobal
