@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>ZhEaIsNsAaBn.Exceptions.Core</AssemblyName>
+    <RootNamespace>ZhEaIsNsAaBn.Exceptions</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Unity.Container" Version="5.11.8" />
+  </ItemGroup>
+
+</Project>
