@@ -17,7 +17,7 @@ namespace ZhEaIsNsAaBn.Exceptions.DB
             /// Exception thrown from System.Data.Entity.DbContext.SaveChanges when validating
             /// entities fails.
             /// </summary>
-            public static readonly ExceptionType ValidationException = EF[0];
+            public static readonly DBExceptionType ValidationException = (DBExceptionType)EF[0];
 
             /// <summary>
             /// Exception thrown by System.Data.Entity.DbContext when it was expected that SaveChanges
@@ -28,18 +28,18 @@ namespace ZhEaIsNsAaBn.Exceptions.DB
             ///     due to security and accesses to the state entries after serialization will return
             ///     null.
             /// </summary>
-            public static readonly ExceptionType ConcurrencyException = EF[1];
+            public static readonly DBExceptionType ConcurrencyException = (DBExceptionType)EF[1];
 
             /// <summary>
             /// Exception thrown by System.Data.Entity.DbContext when the saving of changes to
             /// the database fails.
             /// </summary>
-            public static readonly ExceptionType UpdateException = EF[2];
+            public static readonly DBExceptionType UpdateException = (DBExceptionType)EF[2];
 
             /// <summary>
             /// .
             /// </summary>
-            public static readonly ExceptionType CouldNotTruncate = EF[3];
+            public static readonly DBExceptionType CouldNotTruncate = (DBExceptionType)EF[3];
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace ZhEaIsNsAaBn.Exceptions
 {
@@ -64,7 +65,36 @@ namespace ZhEaIsNsAaBn.Exceptions
 
         public override string ToString()
         {
-            return base.ToString();
+            return this.ToString<T>();
         }
     }
+    //internal static class IDExtensions
+    //{
+    //    internal static string ToString<T>(this IBase<T> id)
+    //    {
+    //        return ToString(id, typeof(IBase<T>));
+    //    }
+
+    //    internal static string ToString<T>(this IBase<T> id, Type type)
+    //    {
+    //        foreach (var field in type.GetFields(BindingFlags.GetField | BindingFlags.Public | BindingFlags.Static))
+    //        {
+    //            if ((field.FieldType == typeof(ExceptionType)) && id.Equals(field.GetValue(null)))
+    //            {
+    //                return string.Format("{0}.{1}", type.ToString().Replace('+', '.'), field.Name);
+    //            }
+    //        }
+
+    //        foreach (var nestedType in type.GetNestedTypes())
+    //        {
+    //            string asNestedType = ToString(id, nestedType);
+    //            if (asNestedType != null)
+    //            {
+    //                return asNestedType;
+    //            }
+    //        }
+
+    //        return null;
+    //    }
+    //}
 }

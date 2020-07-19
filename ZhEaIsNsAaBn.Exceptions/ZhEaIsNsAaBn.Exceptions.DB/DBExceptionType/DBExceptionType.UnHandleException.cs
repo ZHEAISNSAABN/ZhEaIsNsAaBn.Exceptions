@@ -14,17 +14,17 @@ namespace ZhEaIsNsAaBn.Exceptions.DB
             /// <summary>
             /// An uncategorized exception for sql Exceptions.
             /// </summary>
-            public static readonly ExceptionType SqlException = UnHandle[0];
+            public static readonly DBExceptionType SqlException = (DBExceptionType)UnHandle[0];
 
             /// <summary>
             /// An uncategorized exception for Entity FrameWork Exceptions.
             /// </summary>
-            public static readonly ExceptionType EFException = UnHandle[1];
+            public static readonly DBExceptionType EFException = (DBExceptionType)UnHandle[1];
 
             /// <summary>
             /// An uncategorized exception for DataBase but its unknown.
             /// </summary>
-            public static readonly ExceptionType DbException = UnHandle[2];
+            public static readonly DBExceptionType DbException = (DBExceptionType)UnHandle[2];
 
         }
     }

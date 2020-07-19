@@ -26,7 +26,7 @@ namespace ZhEaIsNsAaBn.Exceptions.Test
             {
                 var exceptionData = container.Resolve<IExceptionHandler>().Handle(e);
 
-                Console.WriteLine(exceptionData.ToString());
+                Console.WriteLine(exceptionData.ExceptionType.ToString());
             }
         }
     }

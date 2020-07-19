@@ -19,7 +19,7 @@ namespace ZhEaIsNsAaBn.Exceptions
 
         private readonly IList<ExceptionReceiverBase> receivers;
 
-        public ExceptionHandler(IExceptionDataSetter exceptionDataSetter, params ExceptionReceiverBase[] receivers)
+        public ExceptionHandler(IExceptionDataSetter exceptionDataSetter, List<ExceptionReceiverBase> receivers)
         {
             this.exceptionDataSetter = exceptionDataSetter;
             this.receivers = receivers;

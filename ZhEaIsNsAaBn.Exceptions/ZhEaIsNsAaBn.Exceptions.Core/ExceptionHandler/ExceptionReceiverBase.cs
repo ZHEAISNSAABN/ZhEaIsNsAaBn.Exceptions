@@ -15,6 +15,7 @@ namespace ZhEaIsNsAaBn.Exceptions
         public ExceptionReceiverBase(IExceptionDataSetter exceptionDataSetter)
         {
             _exceptionDataSetter = exceptionDataSetter;
+            _processors = new Dictionary<Type, IExceptionProcessor>();
         }
 
 

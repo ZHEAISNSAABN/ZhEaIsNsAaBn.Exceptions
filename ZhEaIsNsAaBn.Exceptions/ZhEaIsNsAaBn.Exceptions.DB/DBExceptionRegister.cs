@@ -33,12 +33,14 @@ namespace ZhEaIsNsAaBn.Exceptions.DependencyInjection
             container.RegisterSingleton<DbExceptionDbServerBaseProcessor, DbExceptionOracleProcessor>(nameof(DbExceptionOracleProcessor));
 
 
-            container.RegisterSingleton<IExceptionProcessor, DBExceptionProcessor>(
+            container.RegisterInstance<IExceptionProcessor>(
                     nameof(DBExceptionProcessor),
-                    new InjectionConstructor(
+                    new DBExceptionProcessor(
+                        container.Resolve<IExceptionDataSetter>(),
                         container.Resolve<DbExceptionDbServerBaseProcessor>(name: nameof(DbExceptionMSSQLProcessor)),
                         container.Resolve<DbExceptionDbServerBaseProcessor>(name: nameof(DbExceptionMySQLProcessor)),
-                        container.Resolve<DbExceptionDbServerBaseProcessor>(name: nameof(DbExceptionOracleProcessor))));
+                        container.Resolve<DbExceptionDbServerBaseProcessor>(name: nameof(DbExceptionOracleProcessor))
+                        )) ;
 
             #endregion
 

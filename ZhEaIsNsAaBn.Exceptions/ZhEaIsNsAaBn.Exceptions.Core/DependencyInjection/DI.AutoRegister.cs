@@ -50,7 +50,8 @@ namespace ZhEaIsNsAaBn.Exceptions.DependencyInjection
                 }
             }
 
-            container.RegisterSingleton<IExceptionHandler, ExceptionHandler>(new InjectionConstructor(receivers));
+            container.RegisterInstance<IExceptionHandler>(new ExceptionHandler(
+                        container.Resolve<IExceptionDataSetter>(), receivers));
 
         }
     }

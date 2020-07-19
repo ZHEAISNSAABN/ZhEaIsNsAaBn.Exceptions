@@ -30,6 +30,6 @@ namespace ZhEaIsNsAaBn.Exceptions.DB
             return false;
         }
 
-        public Type DefaultType => null; //typeof(SqlTypeException);
+        public Type DefaultType => typeof(SqlTypeExceptionProcessor);
     }
 }

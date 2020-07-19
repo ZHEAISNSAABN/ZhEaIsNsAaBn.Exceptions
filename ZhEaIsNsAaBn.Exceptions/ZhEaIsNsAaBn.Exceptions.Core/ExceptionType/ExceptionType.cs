@@ -29,8 +29,10 @@ namespace ZhEaIsNsAaBn.Exceptions
 
         protected override ExceptionType NewInstance(ulong id) => new ExceptionType(id);
 
-
         #endregion
+
+
+        public static readonly List<object> ExceptionTypes = new List<object>();
 
 
         /// <summary>
