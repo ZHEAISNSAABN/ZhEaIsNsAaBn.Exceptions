@@ -8,7 +8,7 @@ namespace ZhEaIsNsAaBn.Exceptions
     {
         public class DefultTryNum
         {
-            public readonly static int Infinity = -1;
+            public readonly static int Infinity = -2;
             public readonly static int Max = 5;
             public readonly static int Unknown = 1;
             public readonly static int No = 0;

@@ -14,7 +14,7 @@ namespace ZhEaIsNsAaBn.Exceptions
         /// Represent what is the exception
         /// </summary>
         
-        public ExceptionType ExceptionType { get; internal set; }
+        public IBase ExceptionType { get; internal set; }
 
         /// <summary>
         /// Represent the severity level of the error

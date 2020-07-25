@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace ZhEaIsNsAaBn.Exceptions
 {
-    public abstract class Base<T> : IBase<T> where T : Base<T>, new()
+    public abstract class Base<T> : IBase, IBase<T> where T : Base<T>, new()
     {
         private T none;
 
@@ -11,11 +11,15 @@ namespace ZhEaIsNsAaBn.Exceptions
 
         public T this[long childID] => ThisChild(childID);
 
+        IBase IBase.this[long childID] => ThisChild(childID);
+
         protected T ThisChild(long childID) => NewInstance((mID << Key) | (ulong)childID);
 
         public T super => NewInstance(mID >> Key);
 
         public bool isa(T super) => (this != null) && ((this.super == super)) || (this.super.isa(super));
+
+        public bool isa(IBase super) => (this != null) && ((this.super == super)) || (this.super.isa(super));
 
         public static implicit operator Base<T>(int id)
         {
@@ -24,6 +28,15 @@ namespace ZhEaIsNsAaBn.Exceptions
                 throw new System.InvalidCastException("top level id cannot be 0");
             }
             return new T().NewInstance((ulong)id);
+        }
+
+        public static implicit operator string(Base<T> myBase)
+        {
+            if (myBase == null)
+            {
+                throw new System.InvalidCastException("top level id cannot be 0");
+            }
+            return myBase.ToString<T>();
         }
 
         protected abstract T NewInstance(ulong id);
@@ -46,6 +59,7 @@ namespace ZhEaIsNsAaBn.Exceptions
             return a.mID != b.mID;
         }
 
+
         public override bool Equals(object obj)
         {
             if (obj is T)
@@ -55,6 +69,7 @@ namespace ZhEaIsNsAaBn.Exceptions
         }
 
         public override int GetHashCode() => (int)mID;
+
 
         protected Base(ulong id) => mID = id;
         protected Base() { }

@@ -14,20 +14,35 @@ namespace ZhEaIsNsAaBn.Exceptions.Test
         static void Main(string[] args)
         {
             UnityContainer container = new UnityContainer();
-            var register = container.Resolve<AutoRegister>();
-            register.Register(new List<Type>{typeof(DBExceptionRegister)});
+            container.Resolve<RegisterExceptionHandlers>().Register(new List<Type> { typeof(DBExceptionRegister) });
+
+            container.Resolve<TryRegister>().Register();
+            var Itry = container.Resolve<ITry>();
+            
             Console.WriteLine("Hello World!");
 
-            try
-            {
-                throw new DbUpdateException("I dont Know", new Exception());
-            }
-            catch (Exception e)
-            {
-                var exceptionData = container.Resolve<IExceptionHandler>().Handle(e);
+            var execute = Itry.Execute(
+                () =>
+                    {
 
-                Console.WriteLine(exceptionData.ExceptionType.ToString());
+                        throw new DbUpdateException("I dont Know", new Exception());
+                        return true;
+                    });
+
+            var exceptionDataList = execute.ExceptionData;
+
+            Console.WriteLine(execute.Retries);
+            Console.WriteLine(execute.Result);
+            Console.WriteLine(execute.Worked);
+
+            foreach (var exceptionData in exceptionDataList)
+            {
+                Console.WriteLine(exceptionData.ExceptionType);
+                Console.WriteLine(exceptionData.SeverityLevel);
+                Console.WriteLine(exceptionData.CanRetry);
+                Console.WriteLine(exceptionData.DefultTryNum);
             }
+
         }
     }
 }

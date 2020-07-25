@@ -9,10 +9,10 @@ namespace ZhEaIsNsAaBn.Exceptions.DependencyInjection
     using Unity;
     using Unity.Injection;
 
-    public class AutoRegister
+    public class RegisterExceptionHandlers
     {
         private readonly IUnityContainer container;
-        public AutoRegister(IUnityContainer container)
+        public RegisterExceptionHandlers(IUnityContainer container)
         {
             this.container = container;
 

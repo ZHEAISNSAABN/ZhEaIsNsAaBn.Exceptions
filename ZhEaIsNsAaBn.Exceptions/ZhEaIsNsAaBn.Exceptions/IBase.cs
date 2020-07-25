@@ -12,4 +12,12 @@ namespace ZhEaIsNsAaBn.Exceptions
             int GetHashCode();
             bool isa(T super);
     }
+    public interface IBase
+    {
+        IBase this[long childID] { get; }
+
+            bool Equals(object obj);
+            int GetHashCode();
+            bool isa(IBase super);
+    }
 }

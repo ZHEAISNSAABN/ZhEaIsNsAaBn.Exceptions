@@ -5,6 +5,8 @@ using System.Text;
 
 namespace ZhEaIsNsAaBn.Exceptions
 {
+    using System.Linq;
+
     public static class BaseExtensions
     {
             #region ToString for ExceptionType
@@ -20,7 +22,9 @@ namespace ZhEaIsNsAaBn.Exceptions
                 {
                     if ((field.FieldType == typeof(T)) && id.Equals(field.GetValue(null)))
                     {
-                        return string.Format("{0}.{1}", type.ToString().Replace('+', '.'), field.Name);
+                        string lastType = type.Name;
+                        string firstType = type.ToString().Split('.').Last().Split('+').First();
+                        return string.Format("{0}.{1}.{2}", firstType, lastType, field.Name);
                     }
                 }
                 var NestedTypes = type.GetNestedTypes();

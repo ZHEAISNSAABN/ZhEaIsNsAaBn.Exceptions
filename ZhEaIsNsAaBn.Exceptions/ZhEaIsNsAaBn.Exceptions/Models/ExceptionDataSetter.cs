@@ -11,7 +11,7 @@ namespace ZhEaIsNsAaBn.Exceptions
     public interface IExceptionDataSetter
     {
         ExceptionData CreatExceptionData(
-            ExceptionType ExceptionType,
+            IBase ExceptionType,
             Severity SeverityLevel,
             Retry CanRetry,
             int DefultTryNum,
@@ -28,7 +28,7 @@ namespace ZhEaIsNsAaBn.Exceptions
     internal class ExceptionDataSetter : IExceptionDataSetter
     {
         public ExceptionData CreatExceptionData(
-                ExceptionType ExceptionType,
+                IBase ExceptionType,
                 Severity SeverityLevel,
                 Retry CanRetry,
                 int DefultTryNum,

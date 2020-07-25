@@ -2,22 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>ZhEaIsNsAaBn.Exceptions.DB</AssemblyName>
-    <Version>2.0.0</Version>
-    <Product>ZhEaIsNsAaBn.Exceptions</Product>
-    <Company>ZhEaIsNsAaBn</Company>
-    <Authors>ZhEaIsNsAaBn</Authors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.0" />
+    <PackageReference Include="Unity.Container" Version="5.11.8" />
     <PackageReference Include="SS.NuGet.Publish" Version="1.0.1912.22">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.Data.SqlClient" Version="4.3.0" />
-    <PackageReference Include="Unity.Container" Version="5.11.8" />
     <PackageReference Include="ZhEaIsNsAaBn.Exceptions" Version="2.0.0" />
   </ItemGroup>
 
@@ -25,5 +17,11 @@
   <PropertyGroup>
     <NuGetPublishType>remote</NuGetPublishType>
     <NuGetPublishLocation>https://pkgs.dev.azure.com/ZhEaIsNsAaBn/_packaging/ZhEaIsNsAaBn/nuget/v3/index.json</NuGetPublishLocation>
+    <Product>ZhEaIsNsAaBn.Exceptions</Product>
+    <Company>ZhEaIsNsAaBn</Company>
+    <Authors>ZhEaIsNsAaBn</Authors>
+    <Version>2.0.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
 </Project>

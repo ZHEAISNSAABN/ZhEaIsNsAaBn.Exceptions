@@ -10,8 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ZhEaIsNsAaBn.Exceptions.Core\ZhEaIsNsAaBn.Exceptions.Core.csproj" />
     <ProjectReference Include="..\ZhEaIsNsAaBn.Exceptions.DB\ZhEaIsNsAaBn.Exceptions.DB.csproj" />
+    <ProjectReference Include="..\ZhEaIsNsAaBn.Exceptions.Try\ZhEaIsNsAaBn.Exceptions.Try.csproj" />
+    <ProjectReference Include="..\ZhEaIsNsAaBn.Exceptions\ZhEaIsNsAaBn.Exceptions.csproj" />
   </ItemGroup>
 
 </Project>
