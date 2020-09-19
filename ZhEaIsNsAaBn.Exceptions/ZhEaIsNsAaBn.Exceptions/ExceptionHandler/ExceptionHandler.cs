@@ -34,6 +34,9 @@ namespace ZhEaIsNsAaBn.Exceptions
                     break;
             }
 
+            if(ReturnExceptionData == null)
+                ReturnExceptionData = DefaultExceptionData(exception, Caller);
+
             return ReturnExceptionData;
         }
 

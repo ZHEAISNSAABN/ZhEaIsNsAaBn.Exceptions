@@ -10,6 +10,8 @@ namespace ZhEaIsNsAaBn.Exceptions
 
     using ZhEaIsNsAaBn.Exceptions.Models;
 
+    using Serilog;
+
     public interface ITry
     {
         /// <summary>
@@ -61,7 +63,14 @@ namespace ZhEaIsNsAaBn.Exceptions
                 }
                 catch (Exception exception)
                 {
-                    exceptionData.Add(exceptionHandler.Handle(exception));
+                    var TheException = exceptionHandler.Handle(exception, Caller);
+                    exceptionData.Add(TheException);
+                    Log.Error($" Caller = {TheException.Caller} \r\n " + 
+                              $" retriesTime = {retry} \r\n " +
+                              $" DefaultException = {TheException.DefaultException} \r\n " +
+                              $" AdditionalData = {TheException.AdditionalData} \r\n " +
+                              $" SystemMessage = {TheException.SystemMessage} \r\n " +
+                              $" InnerException = {TheException.InnerException} \r\n ");
                     if (maxRetries == -1)
                     {
                         _maxRetries = exceptionData.Last().DefultTryNum + 1;
@@ -100,7 +109,14 @@ namespace ZhEaIsNsAaBn.Exceptions
                 }
                 catch (Exception exception)
                 {
-                    exceptionData.Add(exceptionHandler.Handle(exception));
+                    var TheException = exceptionHandler.Handle(exception, Caller);
+                    exceptionData.Add(TheException);
+                    Log.Error($" Caller = {TheException.Caller} \r\n " +
+                              $" retriesTime = {retry} \r\n " +
+                              $" DefaultException = {TheException.DefaultException} \r\n " +
+                              $" AdditionalData = {TheException.AdditionalData} \r\n " +
+                              $" SystemMessage = {TheException.SystemMessage} \r\n " +
+                              $" InnerException = {TheException.InnerException} \r\n ");
                     if (maxRetries == -1)
                     {
                         _maxRetries = exceptionData.Last().DefultTryNum + 1;

@@ -26,4 +26,9 @@
     <NuGetPublishType>remote</NuGetPublishType>
     <NuGetPublishLocation>https://pkgs.dev.azure.com/ZhEaIsNsAaBn/_packaging/ZhEaIsNsAaBn/nuget/v3/index.json</NuGetPublishLocation>
   </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>D:\Workspace\ArabFinanceAPI\ArabFinance\ZhEaIsNsAaBn\ZhEaIsNsAaBn.Exceptions\ZhEaIsNsAaBn.Exceptions.DB</OutputPath>
+  </PropertyGroup>
 </Project>
